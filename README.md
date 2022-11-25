@@ -29,6 +29,12 @@ This project is developed between a French doctor Sandrine PEUGNY and a French d
    ```sh
    ng serve
    ```
+   
+### datas
+
+Les données de l'application proviennent du site : https://hivfrenchresistance.org/. Elles ont été recopiée dans les fichiers JSON suivant : 
+* hivtoolsresistance/src/assets/json/hivfrenchresistance1.json
+* hivtoolsresistance/src/assets/json/hivfrenchresistance1.json
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
