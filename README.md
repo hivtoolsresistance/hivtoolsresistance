@@ -26,10 +26,9 @@ This project is develop between a french Doctor Sandrine PEUGNY and french devel
    npm install
    ```
 3. Run
-  ```sh
-  ng serve
-  ```
-
+   ```sh
+   ng serve
+   ```
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
