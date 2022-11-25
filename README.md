@@ -30,11 +30,25 @@ This project is developed between a French doctor Sandrine PEUGNY and a French d
    ng serve
    ```
    
-### datas
+## Datas
 
 The data of the application comes from the site: https://hivfrenchresistance.org/. They have been copied in the following JSON files: 
 * hivtoolsresistance/src/assets/json/hivfrenchresistance1.json
 * hivtoolsresistance/src/assets/json/hivfrenchresistance1.json
+
+### How ?
+
+We store the version and date of the last update: 
+```json
+"informations": {
+    "version":33,
+    "date": "October 2022"
+  },
+```
+
+
+
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
