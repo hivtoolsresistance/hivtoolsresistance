@@ -25,7 +25,7 @@ This project is develop between a french Doctor Sandrine PEUGNY and french devel
    ```sh
    npm install
    ```
-3. Run 
+3. Run
   ```sh
   ng serve
   ```
