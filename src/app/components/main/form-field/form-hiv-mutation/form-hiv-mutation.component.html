@@ -1,0 +1,27 @@
+<span class="text-muted">
+  Selection of mutations
+</span>
+<hr>
+<mat-form-field class="example-chip-list" appearance="fill">
+  <mat-label>HIV mutations</mat-label>
+  <mat-chip-list #label aria-label="Fruit selection">
+    <mat-chip *ngFor="let mutation of selectedMutations" (removed)="remove(mutation)">
+      {{mutation}}
+      <button matChipRemove>
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip>
+    <input
+      placeholder="Mutations..."
+      #mutationInput
+      [formControl]="mutationCtrl"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="label">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let mutation of filteredMutation | async" [value]="mutation">
+      {{mutation}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+

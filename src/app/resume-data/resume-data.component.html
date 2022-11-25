@@ -1,0 +1,54 @@
+<div *ngIf="data" class="container">
+  <table class="table" *ngFor="let rule of data.rules">
+    <caption>{{rule.name.toUpperCase()}}</caption>
+    <thead>
+    <tr>
+      <th></th>
+      <th>Mutations associated with resistance	</th>
+      <th>Mutations associated with « possible resistance »
+      </th>
+    </tr>
+  </thead>
+    <tbody >
+      <tr *ngFor="let arv of rule.listArv">
+        <td>
+          {{arv.name}}
+          <br>
+          {{arv.abbreviation}}
+        </td>
+        <td>
+          <ul>
+            <li *ngFor="let mutation of arv.withResistance.mutations">{{mutation.name}}{{mutation.letters}}</li>
+            <ng-container *ngIf="arv.withResistance.associateMutationsList && arv.withResistance.associateMutationsList.number > 0">
+            <li>
+              <ng-container *ngIf="arv.withResistance.associateMutationsList.atLeast">At least </ng-container>
+              {{arv.withResistance.associateMutationsList.number}} mutations among: </li>
+              <li *ngFor="let mutation of arv.withResistance.associateMutationsList.mutations" class="associateMutationsList">
+                {{mutation.name}}{{mutation.letters}}
+              </li>
+            </ng-container>
+            <li *ngFor="let sum of arv.withResistance.sums">
+              <app-list-mutation [list]="sum.sum"></app-list-mutation>
+            </li>
+            <app-complexe-mutation [complexe]="arv.withResistance.complexe"></app-complexe-mutation>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li *ngFor="let mutation of arv.withPossibleResistance.mutations">{{mutation.name}}{{mutation.letters}}</li>
+            <ng-container *ngIf="arv.withPossibleResistance.associateMutationsList && arv.withPossibleResistance.associateMutationsList.number > 0">
+            <li>
+              <ng-container *ngIf="arv.withPossibleResistance.associateMutationsList.atLeast">At least </ng-container>
+              {{arv.withPossibleResistance.associateMutationsList.number}} mutations among: </li>
+              <li *ngFor="let mutation of arv.withPossibleResistance.associateMutationsList.mutations" class="associateMutationsList">{{mutation.name}}{{mutation.letters}}</li>
+            </ng-container>
+            <li *ngFor="let sum of arv.withPossibleResistance.sums">
+              <app-list-mutation [list]="sum.sum"></app-list-mutation>
+            </li>
+            <app-complexe-mutation [complexe]="arv.withPossibleResistance.complexe"></app-complexe-mutation>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+</table>
+</div>

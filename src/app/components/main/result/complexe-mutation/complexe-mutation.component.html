@@ -1,0 +1,8 @@
+<ng-container *ngIf="complexe">
+  <li>
+    <app-mutation [mutation]="complexe.mutation"></app-mutation> + At least {{complexe.associateMutationsList.number}} mutations among:
+    <span *ngFor="let mutation of complexe.associateMutationsList.mutations; let i = index" class="associateMutationsList">
+      <app-mutation [mutation]="mutation"></app-mutation>
+    </span>
+  </li>
+</ng-container>

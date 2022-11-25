@@ -1,0 +1,75 @@
+<ng-container *ngIf="globalData; else loadingError">
+  <form (ngSubmit)="submitForm()">
+    <fieldset >
+      <legend>1 / Type of HIV</legend>
+      <div class="row">
+          <div class="col text-center">
+            <mat-radio-button value="hiv1" (click)="changeHiv('1')" [checked]="typeHiv === '1'" >HIV 1</mat-radio-button>
+          </div>
+          <div class="col text-center">
+            <mat-radio-button value="hiv2" (click)="changeHiv('2')" [checked]="typeHiv === '2'" >HIV 2</mat-radio-button>
+          </div>
+      </div>
+    </fieldset>
+    <br>
+    <ng-container *ngIf="globalData">
+      <fieldset>
+        <legend>2 / Mutations </legend>
+        <div class="row">
+          <div class="col">
+            <app-form-hiv-mutation [data]="globalData" (eventSelectMutation)="actionMutation($event)"></app-form-hiv-mutation>
+            <div style="text-align: left">
+            </div>
+          </div>
+          <div class="col">
+            <app-patient-summary [patientSummary]="patientSummary"></app-patient-summary>
+          </div>
+        </div>
+      </fieldset>
+
+      <br>
+      <fieldset>
+        <div class="row">
+          <div class="col text-center">
+            <button type="submit" mat-raised-button [disabled]="patientSummary.list.length===0">Search for resistance</button>
+          </div>
+          <div class="col text-end">
+            <button type="reset"  mat-raised-button [disabled]="patientSummary.list.length===0" class='reset' (click)="reset()">Reset</button>
+          </div>
+        </div>
+        </fieldset>
+      </ng-container>
+  </form>
+  <hr>
+  <fieldset *ngIf="showResult">
+    <div class="row " style="color: gray">
+      {{globalData.informations.date}} - Version {{globalData.informations.version}}
+    </div>
+    <legend>3 / Results </legend>
+      <app-result [data]="globalData"></app-result>
+      <hr>
+      <div class="row">
+        <div class="col-9">&nbsp;</div>
+        <div class="col-3">
+          <div class="row">
+            Color detail
+          </div>
+          <div class="row" style="background-color: green; color:beige">
+            No Resistance
+          </div>
+          <div class="row" style="background-color: red; color:beige">
+            Resistance
+          </div>
+          <div class="row" style="background-color: orange; color:beige">
+            Possible Resistance
+          </div>
+        </div>
+      </div>
+  </fieldset>
+</ng-container>
+<ng-template #loadingError>
+  <div class="alert alert-danger" role="alert">
+    <b>Error</b>
+    - Loading data impossible. Please contact us : dev@hivtoolsresistance.com
+  </div>
+</ng-template>

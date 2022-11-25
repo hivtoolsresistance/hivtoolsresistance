@@ -1,0 +1,86 @@
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <ng-container *ngFor="let rule of this.showData">
+    <h3>
+      {{rule.name}}
+
+    </h3>
+    <mat-accordion class="example-headers-align" *ngFor="let arv of rule.listArv" >
+      <mat-expansion-panel >
+        <mat-expansion-panel-header [style.background-color]="getBackgroundColor(arv.isPossible)">
+          <mat-panel-title>
+            {{arv.name}} ({{arv.abbreviation}}) &nbsp; <mat-icon *ngIf="isDetailMutationPresent(arv)">info</mat-icon>
+          </mat-panel-title>
+          <mat-panel-description>
+            <span>Details</span>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div>
+          <table class="table" >
+            <thead>
+            <tr>
+              <th>Mutations associated with resistance	</th>
+              <th>Mutations associated with « possible resistance »
+              </th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr>
+              <td>
+                <ul>
+                  <li *ngFor="let mutation of arv.withResistance.mutations"><app-mutation [mutation]="mutation"></app-mutation></li>
+                  <ng-container *ngIf="arv.withResistance.associateMutationsList && arv.withResistance.associateMutationsList.number > 0">
+                    <li>
+                      <ng-container *ngIf="arv.withResistance.associateMutationsList.atLeast">At least </ng-container>
+                      {{arv.withResistance.associateMutationsList.number}} mutations among:
+                    </li>
+                    <li *ngFor="let mutation of arv.withResistance.associateMutationsList.mutations" class="associateMutationsList"><app-mutation [mutation]="mutation"></app-mutation></li>
+                  </ng-container>
+                  <li *ngFor="let sum of arv.withResistance.sums">
+                    <app-list-mutation [list]="sum.sum"></app-list-mutation>
+                  </li>
+                  <app-complexe-mutation [complexe]="arv.withResistance.complexe"></app-complexe-mutation>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li *ngFor="let mutation of arv.withPossibleResistance.mutations"><app-mutation [mutation]="mutation"></app-mutation></li>
+                  <ng-container *ngIf="arv.withPossibleResistance.associateMutationsList && arv.withPossibleResistance.associateMutationsList.number > 0">
+                  <li>
+                    <ng-container *ngIf="arv.withPossibleResistance.associateMutationsList.atLeast">At least </ng-container>
+                    {{arv.withPossibleResistance.associateMutationsList.number}} mutations among: </li>
+                  <li *ngFor="let mutation of arv.withPossibleResistance.associateMutationsList.mutations" class="associateMutationsList"><app-mutation [mutation]="mutation"></app-mutation></li>
+                  </ng-container>
+                  <li *ngFor="let sum of arv.withPossibleResistance.sums">
+                    <app-list-mutation [list]="sum.sum"></app-list-mutation>
+                  </li>
+                  <app-complexe-mutation [complexe]="arv.withPossibleResistance.complexe"></app-complexe-mutation>
+                </ul>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </ng-container>
+
+  <ng-container *ngIf="data.arvNaturallyResistant">
+    <hr>
+    <h3>Others</h3>
+    <mat-accordion class="example-headers-align" *ngFor="let i of data.arvNaturallyResistant">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header  [style.background-color]="getBackgroundColor( -1)">
+          <mat-panel-title>
+            {{i}}
+          </mat-panel-title>
+          <mat-panel-description>
+            <span>Details</span>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div>
+          Naturally resistant
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </ng-container>
+</div>

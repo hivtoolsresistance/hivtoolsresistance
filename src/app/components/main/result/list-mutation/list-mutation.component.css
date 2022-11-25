@@ -1,0 +1,4 @@
+app-mutation:not(:last-child)::after{
+  content: ' + ';
+  font-weight: bold;
+}

@@ -1,0 +1,12 @@
+table{
+  width: 100%;
+  caption-side: top!important;
+}
+
+td{
+  border: 1px solid black;
+}
+
+.associateMutationsList{
+  margin: 0 40px;
+}

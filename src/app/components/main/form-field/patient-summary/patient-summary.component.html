@@ -1,0 +1,34 @@
+<span class="text-muted">
+  Summary of mutations
+</span>
+<hr>
+<ng-container class="accordion accordion-flush" id="accordionFlushExample" *ngIf="patientSummary.list.length>0; else waiting">
+
+  <div class="accordion-item" *ngFor="let drugClass of patientSummary.list">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne">
+        {{drugClass.ruleName.toUpperCase()}}
+      </button>
+    </h2>
+    <div id="flush-collapseOne"
+         class="accordion-collapse collapse show"
+         aria-labelledby="flush-headingOne"
+         data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <ng-container *ngFor="let mutation of drugClass.listMutations">
+          <ng-container *ngIf="mutation.selected">
+          {{mutation.fullNamesMutations}}<br>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #waiting >
+  <span class="mb-3 mb-md-0 text-muted">Waiting mutations...</span>
+</ng-template>

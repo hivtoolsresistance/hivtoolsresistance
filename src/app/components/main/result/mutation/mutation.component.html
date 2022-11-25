@@ -1,0 +1,5 @@
+<span [ngClass]="{'selected': mutation.selected === true}">{{mutation.name}}{{mutation.letters}}</span>
+<span *ngIf="mutation.detail"> ({{mutation.detail}})
+  <mat-icon *ngIf="mutation.detail !== undefined && mutation.selected">info</mat-icon>
+
+</span>

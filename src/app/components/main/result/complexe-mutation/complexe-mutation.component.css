@@ -1,0 +1,4 @@
+span:not(:last-child)::after{
+  content: ' or ';
+  font-weight: bold;
+}

@@ -1,0 +1,26 @@
+
+mat-radio-button{
+  padding: 15px;
+  border-radius: 5px;
+  background-color: lightskyblue;
+  color:white;
+  cursor: pointer;
+}
+
+mat-radio-button.mat-radio-checked {
+  background-color: #2e95f6;
+}
+
+button[type="submit"]{
+  background-color:#2e95f6;
+  color:white;
+}
+
+div.col:first-child{
+  border-right: 1px solid lightblue;
+}
+
+button.reset:not([disabled]){
+  background-color:gray;
+  color:white;
+}
