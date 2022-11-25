@@ -1,27 +1,33 @@
-# My apps
+# HIV Tools Resistance
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+Tools to support the interpretation of HIV resistance genotyping
 
-## Development server
+## Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+https://hivtoolsresistance.com/ 
 
-## Code scaffolding
+## About the project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project is develop between a french Doctor Sandrine PEUGNY and french developper William ARNOUX.
 
-## Build
+### Build with
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* [![Angular][Angular.io]][Angular-url]
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
-## Running unit tests
+### Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repo
+   ```sh
+   git clone https://github.com/hivtoolsresistance/hivtoolsresistance.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run 
+  ```sh
+  ng serve
+  ```
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
