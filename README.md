@@ -8,7 +8,7 @@ https://hivtoolsresistance.com/
 
 ## About the project
 
-This project is develop between a french Doctor Sandrine PEUGNY and french developper William ARNOUX.
+This project is developed between a French doctor Sandrine PEUGNY and a French developer William ARNOUX.
 
 ### Build with
 
