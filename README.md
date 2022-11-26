@@ -50,10 +50,7 @@ All mutations are store like :
 {
    "name": "M41",
    "letters": "L"
-}
-
-///  
-```json
+}, 
 {
    "name": "T215",
    "letters": "A/C/D/E/G/H/I/L/N/S/V/Y/F"
