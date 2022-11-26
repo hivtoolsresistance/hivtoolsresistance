@@ -45,7 +45,13 @@ We store the version and date of the last update:
     "date": "October 2022"
   },
 ```
-
+All mutations are store like : 
+```json
+{
+   "name": "M41",
+   "letters": "L"
+}
+```
 
 
 
