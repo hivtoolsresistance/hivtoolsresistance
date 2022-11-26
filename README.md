@@ -49,7 +49,7 @@ All mutations are store like :
 ```json
 {
    "name": "M41",
-   "letters": "L" or "A/C/D/E/G/H/I/L/N/S/V/Y/F"
+   "letters": "L" or "A/C/D/E/G/H/I/L/N/S/V/Y/F "
 }
 ```
 
